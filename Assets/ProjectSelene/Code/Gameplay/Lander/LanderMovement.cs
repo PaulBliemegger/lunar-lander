@@ -58,14 +58,14 @@ namespace ProjectSelene.Code.Gameplay.Lander
                 Vector3 force = new Vector3(input.x, 0f, input.y) * stabilisationPower;
                 _landerRb.AddForce(force);
                 _tank.CurrentValue -= fuelCost;
-                Debug.Log(_tank.CurrentValue);
+                //Debug.Log(_tank.CurrentValue);
             }
 
             if (_isThrusting)
             {
                 _landerRb.AddForce(transform.up * thrustPower);
                 _tank.CurrentValue -= (int)math.floor((float)fuelCost * fuelThrustingFactor);
-                Debug.Log(_tank.CurrentValue);
+                //Debug.Log(_tank.CurrentValue);
             }
         }
     }

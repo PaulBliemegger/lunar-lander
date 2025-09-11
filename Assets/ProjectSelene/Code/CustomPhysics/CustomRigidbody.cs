@@ -76,6 +76,7 @@ public class CustomRigidbody : MonoBehaviour
         if (linearDamping > 0f)
             Velocity *= Mathf.Clamp01(1f - linearDamping * dt);
 
+        //Debug.Log(Velocity.magnitude);
         // integrate
         if (useCollisions) MoveWithSweptAABB(dt);
         else transform.position += Velocity * dt;
