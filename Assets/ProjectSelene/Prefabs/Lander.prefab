@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4889881378195546670}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 150, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitationalCentre: {x: 0, y: 0, z: 0}
-  gStrength: 4.5
+  gStrength: 3.8
 --- !u!65 &2537454155291321032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86,7 +86,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabilisationPower: 5
-  thrustPower: 10
+  thrustPower: 15
+  maxFuel: 500
+  fuelCost: 1
+  fuelThrustingFactor: 3
 --- !u!114 &4996479511347317220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  maxLandingSpeed: 4
+  maxLandingSpeed: 5
   maxTiltDegrees: 10
 --- !u!114 &388061119374975424
 MonoBehaviour:
@@ -231,7 +234,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 0}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
