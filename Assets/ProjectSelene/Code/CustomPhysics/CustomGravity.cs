@@ -1,9 +1,6 @@
-using System;
-using ProjectSelene.Code.CustomPhysics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace ProjectSelene.Code
+namespace ProjectSelene.Code.CustomPhysics
 {
     public class CustomGravity: MonoBehaviour
     {
