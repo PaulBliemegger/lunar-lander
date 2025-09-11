@@ -10,6 +10,7 @@ namespace ProjectSelene.Code.Gameplay
         [SerializeField] private GameObject landerModel;
         [SerializeField] private GameObject lander;
         [SerializeField] private Camera cam;
+        [SerializeField] private GameObject secondCam;
         private CustomRigidbody _landerRb;
         private CustomGravity _landerGravity;
         private LanderMovement  _landerMovement;
@@ -23,7 +24,6 @@ namespace ProjectSelene.Code.Gameplay
 
         public void OnSafeLanding()
         {
-            OnLand();
             _landerGravity.enabled = false;
             _landerRb.Velocity = Vector3.zero;
             _landerMovement.enabled = false;
@@ -31,17 +31,13 @@ namespace ProjectSelene.Code.Gameplay
 
         public void OnCrash()
         {
-            OnLand();
             cam.transform.SetParent(null);
             lander.SetActive(false);
-            //landerModel.SetActive(false);
         }
 
-        public void OnLand()
+        public void OnSecondCameraDistance()
         {
-            //_landerMovement.enabled = false;
-            //cam.transform.SetParent(null);
-            //lander.SetActive(false);
+            secondCam.SetActive(true);
         }
     }
 }
