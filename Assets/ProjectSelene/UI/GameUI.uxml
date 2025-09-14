@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectSelene/UI/UIiStyle.uss?fileID=7433441132597879392&amp;guid=406c944aa782ac140821145e82ed5d5f&amp;type=3#UIiStyle" />
+    <ui:VisualElement name="stats-container" style="align-self: flex-end; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px; position: absolute; top: 10%; right: 6%;">
+        <ui:ProgressBar value="66" title="Tank" name="tank-progress-bar" style="-unity-font-definition: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Skin_Assets/font/zekton%20free.ttf?fileID=12800000&amp;guid=8297a2bf97dbbba468bd2518d003a876&amp;type=3#zekton free&quot;); position: absolute; height: 50px; top: auto; left: auto; right: 200px;" />
+        <ui:VisualElement name="velocity-container" class="stat-container" style="flex-grow: 1; flex-direction: column; background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Skin_Assets/window/window_transparent1.png?fileID=2800000&amp;guid=78e3daf76621d66448e594d6993adbd8&amp;type=3#window_transparent1&quot;);">
+            <ui:Label text="Velocity:" name="velocity--label" />
+            <ui:Label text="(-99.99 -99.99 -99.99)" name="velocity--value" />
+        </ui:VisualElement>
+        <ui:VisualElement name="speed-container" class="stat-container" style="flex-grow: 1; flex-direction: row;">
+            <ui:Label text="Speed (m/s)" name="speed--label" />
+            <ui:Label text="-999.99" name="speed--value" />
+        </ui:VisualElement>
+        <ui:VisualElement name="distance-container" class="stat-container" style="flex-grow: 1; flex-direction: row;">
+            <ui:Label text="Distance (m)" name="distance--label" />
+            <ui:Label text="-999.99" name="distance--value" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

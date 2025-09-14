@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
-  linearDamping: 0.05
+  linearDamping: 0
   useCollisions: 1
   collisionLayers:
     serializedVersion: 2

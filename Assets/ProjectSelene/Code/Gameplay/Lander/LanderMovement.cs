@@ -20,6 +20,9 @@ namespace ProjectSelene.Code.Gameplay.Lander
         private CustomRigidbody _landerRb;
         private DefaultInputActions _inputActions;
         private AttributeCounter _tank;
+
+        public int CurrentTank => _tank.CurrentValue;
+        public int MaxTank => _tank.MaxValue;
         
         private Vector2 _inputVector;
         private bool _isThrusting;
