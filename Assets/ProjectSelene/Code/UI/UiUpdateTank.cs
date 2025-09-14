@@ -11,7 +11,7 @@ namespace ProjectSelene.Code.UI
         
         private ProgressBar _tankProgressBar;
 
-        private void Start()
+        public void ConnectUI()
         {
             _tankProgressBar = uiDocument.rootVisualElement.Q<ProgressBar>("tank-progress-bar");
             _tankProgressBar.highValue = landerMovement.MaxTank;

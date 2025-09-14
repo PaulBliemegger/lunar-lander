@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "DefaultInputActions",
     "maps": [
         {
@@ -27,7 +28,16 @@
                     "name": "Thrust",
                     "type": "Button",
                     "id": "fc4ae6db-df49-435e-96e1-c156a017ba65",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "7af3855a-49cb-415f-93fd-04a5377e6a5e",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -108,6 +118,17 @@
                     "processors": "",
                     "groups": "DefaultInputScheme",
                     "action": "Thrust",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3c6a744-93e4-4259-8f33-f9ae0b8336d2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

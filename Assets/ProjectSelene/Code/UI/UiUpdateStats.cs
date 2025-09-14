@@ -17,7 +17,7 @@ namespace ProjectSelene.Code.UI
         private Label _speedValueVE;
         private Label _velocityValueVE;
 
-        private void Start()
+        public void ConnectUI()
         {
             var statsContainer = uiDocument.rootVisualElement.Q<VisualElement>("stats--container");
             var distanceContainer = uiDocument.rootVisualElement.Q<VisualElement>("distance-container");
