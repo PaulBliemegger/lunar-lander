@@ -59,6 +59,8 @@ namespace ProjectSelene.Code.UI
             Time.timeScale = 0;
             uiDocument.visualTreeAsset = pauseMenu;
             var root = uiDocument.rootVisualElement;
+            var resumeButton = root.Q<Button>("resume__button");
+            resumeButton.clicked += ShowGameUI;
             var retryButton = root.Q<Button>("retry__button");
             retryButton.clicked += () => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             var mainMenuButton = root.Q<Button>("main-menu__button");

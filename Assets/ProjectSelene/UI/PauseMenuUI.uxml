@@ -2,6 +2,7 @@
     <Style src="project://database/Assets/ProjectSelene/UI/UIiStyle.uss?fileID=7433441132597879392&amp;guid=406c944aa782ac140821145e82ed5d5f&amp;type=3#UIiStyle" />
     <ui:VisualElement style="flex-grow: 1; margin-top: 20px; margin-bottom: 20px; justify-content: center; align-items: center;">
         <ui:GroupBox>
+            <ui:Button text="Resume" name="resume__button" class="menu-button" />
             <ui:Button text="Retry" name="retry__button" class="menu-button" />
             <ui:Button text="Main Menu" name="main-menu__button" class="menu-button" />
             <ui:Button text="Quit" name="quit__button" class="menu-button" />

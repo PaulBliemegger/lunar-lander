@@ -47,6 +47,18 @@ namespace ProjectSelene.Code.UI
             {
                 SceneManager.LoadScene("EasyMap");
             };
+            
+            var normalButton = root.Q<Button>("normal-map__button");
+            normalButton.clicked += () =>
+            {
+                SceneManager.LoadScene("NormalMap");
+            };
+            
+            var advancedButton = root.Q<Button>("advanced-map__button");
+            advancedButton.clicked += () =>
+            {
+                SceneManager.LoadScene("AdvancedMap");
+            };
         }
 
         private void ShowConfiguration()
