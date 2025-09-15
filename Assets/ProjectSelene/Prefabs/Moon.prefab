@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1330748219127313798}
   - component: {fileID: 3264979838090179115}
-  - component: {fileID: 1501182185452302119}
   - component: {fileID: 3086937151803786144}
   m_Layer: 0
   m_Name: Moon
@@ -47,26 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c23dcce99a1a044eb968e49338445f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1501182185452302119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3259697025171401030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c1021b62db467ab9c703ebfc812b29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mass: 1
-  linearDamping: 0.05
-  useCollisions: 1
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  skinWidth: 0.01
-  maxSweepSteps: 3
 --- !u!135 &3086937151803786144
 SphereCollider:
   m_ObjectHideFlags: 0

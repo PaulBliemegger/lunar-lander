@@ -69,9 +69,10 @@ namespace ProjectSelene.Code.UI
 
         public void ShowLandedUI(float speed)
         {
+            OnGameOver();
             var root = uiDocument.rootVisualElement;
             var heading = root.Q<Label>("heading__label");
-            heading.text = $"Mission Accomplished\nLanded on platform successfully";
+            heading.text = $"Mission Accomplished:\nLanded on platform successfully";
             heading.style.color = new Color(0f, 201f, 0f, 255f);
         }
 
@@ -80,7 +81,7 @@ namespace ProjectSelene.Code.UI
             OnGameOver();
             var root = uiDocument.rootVisualElement;
             var heading = root.Q<Label>("heading__label");
-            heading.text = $"Mission Failed\nCrashed against {otherName.ToUpper()}";
+            heading.text = $"Mission Failed:\nCrashed against {otherName.ToUpper()}";
             heading.style.color = new Color(201f, 0f, 0f, 255f);
         }
 

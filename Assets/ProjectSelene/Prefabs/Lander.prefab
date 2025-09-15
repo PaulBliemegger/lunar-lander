@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 2537454155291321032}
   - component: {fileID: 2693204427367301782}
   - component: {fileID: 4996479511347317220}
-  - component: {fileID: 388061119374975424}
+  - component: {fileID: 1805466011047001864}
+  - component: {fileID: 1999484243023120220}
+  - component: {fileID: 723669835716929164}
   m_Layer: 0
   m_Name: Lander
   m_TagString: Untagged
@@ -106,7 +108,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   maxLandingSpeed: 5
   maxTiltDegrees: 10
---- !u!114 &388061119374975424
+--- !u!114 &1805466011047001864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,13 +117,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 4889881378195546670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c1021b62db467ab9c703ebfc812b29, type: 3}
+  m_Script: {fileID: 11500000, guid: 50e200074670449cb742a7554b3868ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
   linearDamping: 0
   useCollisions: 1
   collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 0.01
+  maxSweepSteps: 3
+  collisionSolverComponent: {fileID: 723669835716929164}
+--- !u!114 &1999484243023120220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889881378195546670}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19214557fb414ffc97de17449f8831cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 0.01
+  maxSweepSteps: 3
+--- !u!114 &723669835716929164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889881378195546670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51952433861c457d995ca0d599eab97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
     serializedVersion: 2
     m_Bits: 4294967295
   skinWidth: 0.01
@@ -173,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ebbe0aaa954b6e9bc2ceb7de9b26dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 388061119374975424}
+  rb: {fileID: 1805466011047001864}
   player: {fileID: 5248956028000853829}
   minOffset: {x: 0, y: 2, z: 0}
   maxOffset: {x: 0, y: 7, z: -1}
