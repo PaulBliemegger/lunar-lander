@@ -100,5 +100,7 @@ MonoBehaviour:
   gameUI: {fileID: 9197481963319205126, guid: f7818c94ba32e7f49bb79efab6256715, type: 3}
   pauseMenu: {fileID: 9197481963319205126, guid: 2d85904269e4eb247b0c6366398e0e2c,
     type: 3}
+  gameOverUi: {fileID: 9197481963319205126, guid: 2c182fe3974b38040b8fade65ee424e6,
+    type: 3}
   uiUpdateTank: {fileID: 7285348776812618232}
   uiUpdateStats: {fileID: 4964042837372883522}
