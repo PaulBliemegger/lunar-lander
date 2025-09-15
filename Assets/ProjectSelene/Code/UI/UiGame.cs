@@ -69,29 +69,33 @@ namespace ProjectSelene.Code.UI
 
         public void ShowLandedUI(float speed)
         {
-            uiDocument.visualTreeAsset = gameOverUi;
             var root = uiDocument.rootVisualElement;
             var heading = root.Q<Label>("heading__label");
             heading.text = $"Mission Accomplished\nLanded on platform successfully";
             heading.style.color = new Color(0f, 201f, 0f, 255f);
-            
-            var timerLabel  = root.Q<Label>("timer__label");
-            timerLabel.text = $"{DisplayTime()}";
         }
 
         public void ShowCrashedUI(string otherName, float speed)
         {
-            uiDocument.visualTreeAsset = gameOverUi;
+            OnGameOver();
             var root = uiDocument.rootVisualElement;
             var heading = root.Q<Label>("heading__label");
             heading.text = $"Mission Failed\nCrashed against {otherName.ToUpper()}";
             heading.style.color = new Color(201f, 0f, 0f, 255f);
-            
+        }
+
+        private void OnGameOver()
+        {
+            uiDocument.visualTreeAsset = gameOverUi;
+            var root = uiDocument.rootVisualElement;
             var timerLabel  = root.Q<Label>("timer__label");
             timerLabel.text = $"{DisplayTime()}";
+            
+            uiUpdateStats.ConnectUI(false);
+            uiUpdateStats.UpdateStatsOnCollision();
         }
         
-        string DisplayTime()
+        private string DisplayTime()
         {
             var totalSeconds = Time.realtimeSinceStartup;
             int minutes = (int)((totalSeconds % 3600) / 60);

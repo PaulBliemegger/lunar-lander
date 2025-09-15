@@ -13,6 +13,10 @@
                 <ui:Label text="Speed (m/s)" name="speed--label" />
                 <ui:Label text="-999.99" name="speed--value" />
             </ui:VisualElement>
+            <ui:VisualElement name="distance-container" class="stat-container" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label text="Distance (m)" name="distance--label" />
+                <ui:Label text="-999.99" name="distance--value" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

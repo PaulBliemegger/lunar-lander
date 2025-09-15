@@ -23,6 +23,7 @@ public class CustomRigidbody : MonoBehaviour
     // Telemetry
     public bool IsGrounded { get; private set; }
     public float LastImpactSpeed { get; private set; }
+    public Vector3 LastImpactVelocity { get; private set; }
     public Vector3 LastImpactNormal { get; private set; } = Vector3.up;
 
     // Event: raised when this body first contacts another collider in a step
@@ -148,6 +149,7 @@ public class CustomRigidbody : MonoBehaviour
 
             // Telemetry
             LastImpactSpeed = Velocity.magnitude;
+            LastImpactVelocity = Velocity;
             LastImpactNormal = bestNormal;
 
             // Slide: remove velocity into normal

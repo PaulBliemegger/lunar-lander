@@ -16,8 +16,9 @@ namespace ProjectSelene.Code.UI
         private Label _distanceValueVE;
         private Label _speedValueVE;
         private Label _velocityValueVE;
+        private bool _autoUpdate;
 
-        public void ConnectUI()
+        public void ConnectUI(bool autoUpdate = true)
         {
             var statsContainer = uiDocument.rootVisualElement.Q<VisualElement>("stats--container");
             var distanceContainer = uiDocument.rootVisualElement.Q<VisualElement>("distance-container");
@@ -26,13 +27,27 @@ namespace ProjectSelene.Code.UI
             _distanceValueVE = distanceContainer.Q<Label>("distance--value");
             _speedValueVE = speedContainer.Query<Label>("speed--value");
             _velocityValueVE = velocityContainer.Q<Label>("velocity--value");
+            _autoUpdate = autoUpdate;
+        }
+
+        private void UpdateStats(float distance, float speed, Vector3 velocity)
+        {
+            _distanceValueVE.text = $"{Math.Round(distance, 2)}";
+            _speedValueVE.text = $"{Math.Round(speed, 2)}";
+            _velocityValueVE.text = $"{velocity}";
+        }
+
+        public void UpdateStatsOnCollision()
+        {
+            UpdateStats(distanceUtil.DistanceToPlatform, landerRb.LastImpactSpeed, landerRb.LastImpactVelocity);
         }
 
         private void FixedUpdate()
         {
-            _distanceValueVE.text = $"{Math.Round(distanceUtil.DistanceToPlatform, 2)}";
-            _speedValueVE.text = $"{Math.Round(landerRb.Speed, 2)}";
-            _velocityValueVE.text = $"{landerRb.Velocity}";
+            if (_autoUpdate)
+            {
+                UpdateStats(distanceUtil.DistanceToPlatform, landerRb.Speed, landerRb.Velocity);
+            }
         }
     }
 }
