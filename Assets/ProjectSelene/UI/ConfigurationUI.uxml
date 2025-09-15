@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectSelene/UI/UIiStyle.uss?fileID=7433441132597879392&amp;guid=406c944aa782ac140821145e82ed5d5f&amp;type=3#UIiStyle" />
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-self: center;">
+        <ui:GroupBox style="flex-wrap: wrap; flex-direction: row;">
+            <ui:Button text="Button" class="menu-button" />
+            <ui:Button text="Button" class="menu-button" />
+            <ui:Button text="Button" class="menu-button" />
+        </ui:GroupBox>
+        <ui:VisualElement style="flex-grow: 0; align-self: center;">
+            <ui:Button text="Return" name="return-main-menu__button" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

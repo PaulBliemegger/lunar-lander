@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectSelene/UI/UIiStyle.uss?fileID=7433441132597879392&amp;guid=406c944aa782ac140821145e82ed5d5f&amp;type=3#UIiStyle" />
+    <ui:VisualElement style="flex-grow: 1; margin-top: 20px; margin-bottom: 20px; justify-content: center; align-items: center;">
+        <ui:GroupBox>
+            <ui:Button text="Maps" name="maps-button" class="menu-button" />
+            <ui:Button text="Configuration" name="configuration-button" class="menu-button" />
+            <ui:Button text="Quit" name="quit-button" class="menu-button" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

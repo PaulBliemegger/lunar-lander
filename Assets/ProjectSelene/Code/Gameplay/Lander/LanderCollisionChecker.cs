@@ -34,19 +34,19 @@ namespace ProjectSelene.Code.Gameplay.Lander
             if (!other.gameObject.CompareTag("Platform"))
             {
                 Debug.Log($"💥 Crash on {other.name.ToUpper()} (speed {s:0.00} m/s, tilt {tilt:0.0}°)");
-                gameManager.OnCrash();
+                gameManager.OnCrash(other.name, s);
                 return;
             }
 
             if (gentle && upright)
             {
                 Debug.Log($"✅ Safe landing on {other.name} (speed {s:0.00} m/s)");
-                gameManager.OnSafeLanding();
+                gameManager.OnSafeLanding(s);
             }
             else
             {
                 Debug.Log($"💥 Crash on {other.name} (speed {s:0.00} m/s, tilt {tilt:0.0}°)");
-                gameManager.OnCrash();
+                gameManager.OnCrash(other.name, s);
             }
         }
     }
