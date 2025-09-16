@@ -6,6 +6,7 @@ namespace ProjectSelene.Code
     public class GameConfig : MonoBehaviour
     {
         [SerializeField] private bool loadConfigFromFile;
+        [SerializeField] private string configFileName;
         
         [Header("Gravity")]
         public float gravitationalPull = 1.62f;
@@ -30,7 +31,7 @@ namespace ProjectSelene.Code
         {
             if (loadConfigFromFile)
             {
-                ConfigFile.TryLoad(out GameConfigData data);
+                GameConfigLoader.TryLoadEffective(configFileName, out GameConfigData data);
                 GameConfigIO.Apply(data, this);
             }
         }

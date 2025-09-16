@@ -41,11 +41,9 @@ namespace ProjectSelene.Code.CustomPhysics
 
                 if (_self is BoxCollider box)
                 {
-                    // BoxCast needs world half-extents and orientation
                     Vector3 half; Quaternion rot;
                     GetBoxWorld(box, out Vector3 center, out half, out rot);
 
-                    // cast from current position using same rotation
                     Vector3 castOrigin = center + (position - _self.transform.position);
                     hit = Physics.BoxCast(castOrigin, half, dir, out h, rot, dist, layers, QueryTriggerInteraction.Ignore);
                 }
@@ -57,7 +55,6 @@ namespace ProjectSelene.Code.CustomPhysics
                 }
                 else
                 {
-                    // fallback: simple ray
                     hit = Physics.Raycast(position, dir, out h, dist, layers, QueryTriggerInteraction.Ignore);
                 }
 

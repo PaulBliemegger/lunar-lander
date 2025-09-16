@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "GravitationalPull": 1.62,
+  "Mass": 1,
+  "LinearDamping": 0,
+  "MaxTank": 800,
+  "FuelCost": 1,
+  "MainThrustFuelFacto": 3,
+  "MainThrust": 40,
+  "SideThrust": 5,
+  "SafeLandingSpeed": 4
+}

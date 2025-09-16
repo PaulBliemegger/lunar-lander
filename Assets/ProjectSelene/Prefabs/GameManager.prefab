@@ -80,11 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d965eb79264246aa56b543baaa55f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadConfigFromFile: 0
+  loadConfigFromFile: 1
+  configFileName: advanced
   gravitationalPull: 1.62
   mass: 1
   linearDamping: 0
-  maxFuel: 1000
+  maxFuel: 2000
   fuelCost: 1
   mainThrustFuelFactor: 3
   mainThrust: 40
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144c04df1a2d40e29ab1efd161d38ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 2625939313884230094}
+  Config: {fileID: 2625939313884230094}
   consumers:
   - {fileID: 0}
   - {fileID: 0}

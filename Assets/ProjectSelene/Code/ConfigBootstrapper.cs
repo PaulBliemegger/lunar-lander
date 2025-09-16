@@ -4,18 +4,18 @@ namespace ProjectSelene.Code
 {
     public class ConfigBootstrapper : MonoBehaviour
     {
-        [SerializeField] private GameConfig config;
+        [SerializeField] public GameConfig Config;
         [SerializeField] private MonoBehaviour[] consumers;
 
-        void Awake()
+        void Start()
         {
-            if (!config) { Debug.LogError("No GameConfig assigned."); return; }
+            if (!Config) { Debug.LogError("No GameConfig assigned."); return; }
 
             foreach (var mb in consumers)
             {
                 if (mb is IConfigConsumer c)
                 {
-                    c.ApplyConfig(config);
+                    c.ApplyConfig(Config);
                 }
             }
         }

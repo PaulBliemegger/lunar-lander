@@ -2805,11 +2805,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2625939313884230094, guid: 4aeb6521fa9d39c43bdf9935a1278829,
-        type: 3}
-      propertyPath: maxFuel
-      value: 2000
-      objectReference: {fileID: 0}
     - target: {fileID: 6200227703731468780, guid: 4aeb6521fa9d39c43bdf9935a1278829,
         type: 3}
       propertyPath: ui

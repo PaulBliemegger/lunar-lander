@@ -71,16 +71,13 @@ namespace ProjectSelene.Code.CustomPhysics
         {
             float dt = Time.fixedDeltaTime;
             if (dt <= 0f || mass <= 0f) { _forceAccum = Vector3.zero; return; }
-
-            // a = F/m
+            
             Vector3 acc = _forceAccum / mass;
             Velocity += acc * dt;
-
-            // damping
+            
             if (linearDamping > 0f)
                 Velocity *= Mathf.Clamp01(1f - linearDamping * dt);
-
-            // integrate using selected backend
+            
             if (!useCollisions || _solver == null)
             {
                 transform.position += Velocity * dt;
@@ -95,8 +92,7 @@ namespace ProjectSelene.Code.CustomPhysics
 
                 transform.position = pos;
                 Velocity = vel;
-
-                // telemetry + event
+                
                 IsGrounded = res.grounded;
                 if (res.hit)
                 {
