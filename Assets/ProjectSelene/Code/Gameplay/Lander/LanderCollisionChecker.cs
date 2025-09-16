@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace ProjectSelene.Code.Gameplay.Lander
 {
-    public class LanderCollisionChecker : MonoBehaviour
+    public class LanderCollisionChecker : MonoBehaviour, IConfigConsumer
     {
         [SerializeField] private GameManager gameManager;
-        public float maxLandingSpeed = 2f;
-        public float maxTiltDegrees = 10f;
+        public float safeLandingSpeed = 5f;
 
         private CustomRigidbody _rb;
         void Awake()
@@ -23,31 +22,28 @@ namespace ProjectSelene.Code.Gameplay.Lander
 
         private void OnBodyCollision(Collider other)
         {
-            // Use the speed at impact from the RB telemetry
             float s = _rb.LastImpactSpeed;
-
-            // Optional: check tilt vs the last impact normal
-            float tilt = Vector3.Angle(transform.up, _rb.LastImpactNormal);
-            bool gentle = s <= maxLandingSpeed;
-            bool upright = tilt <= maxTiltDegrees;
+            bool gentle = s <= safeLandingSpeed;
 
             if (!other.gameObject.CompareTag("Platform"))
             {
-                Debug.Log($"💥 Crash on {other.name.ToUpper()} (speed {s:0.00} m/s, tilt {tilt:0.0}°)");
                 gameManager.OnCrash(other.name, s);
                 return;
             }
 
-            if (gentle && upright)
+            if (gentle)
             {
-                Debug.Log($"✅ Safe landing on {other.name} (speed {s:0.00} m/s)");
                 gameManager.OnSafeLanding(s);
             }
             else
             {
-                Debug.Log($"💥 Crash on {other.name} (speed {s:0.00} m/s, tilt {tilt:0.0}°)");
                 gameManager.OnCrash(other.name, s);
             }
+        }
+
+        public void ApplyConfig(GameConfig gameConfig)
+        {
+            safeLandingSpeed = gameConfig.safeLandingSpeed;
         }
     }
 }

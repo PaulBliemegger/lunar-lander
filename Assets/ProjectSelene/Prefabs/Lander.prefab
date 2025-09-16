@@ -88,11 +88,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd95da8472f41cf9f3e4d2beeba47f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabilisationPower: 5
-  thrustPower: 40
+  sideThrust: 5
+  mainThrust: 40
   maxFuel: 1000
   fuelCost: 1
-  fuelThrustingFactor: 3
+  mainThrustFuelFactor: 3
 --- !u!114 &4996479511347317220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,8 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  maxLandingSpeed: 5
-  maxTiltDegrees: 10
+  safeLandingSpeed: 5
 --- !u!114 &1805466011047001864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,8 +217,8 @@ MonoBehaviour:
   maxSpeed: 20
   smoothTime: 0.2
   shakeThreshold: 8
-  maxShakeAmount: 0.01
-  shakeSpeed: 5
+  maxShakeAmount: 0.004
+  shakeSpeed: 4
 --- !u!20 &3008400295222755595
 Camera:
   m_ObjectHideFlags: 0

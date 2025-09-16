@@ -84,11 +84,11 @@ MonoBehaviour:
   gravitationalPull: 1.62
   mass: 1
   linearDamping: 0
-  maxTank: 1000
+  maxFuel: 1000
   fuelCost: 1
-  baseThrust: 40
-  mainThrust: 12
-  sideThrust: 1
+  mainThrustFuelFactor: 3
+  mainThrust: 40
+  sideThrust: 5
   safeLandingSpeed: 5
 --- !u!114 &9180062888805070641
 MonoBehaviour:
@@ -104,4 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 2625939313884230094}
   consumers:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}

@@ -6,16 +6,16 @@ using UnityEngine.InputSystem;
 
 namespace ProjectSelene.Code.Gameplay.Lander
 {
-    public class LanderMovement : MonoBehaviour
+    public class LanderMovement : MonoBehaviour, IConfigConsumer
     {
         [Header("Controls")]
-        [SerializeField] private float stabilisationPower = 5f;
-        [SerializeField] private float thrustPower = 5f;
+        [SerializeField] private float sideThrust = 5f;
+        [SerializeField] private float mainThrust = 40f;
         
         [Header("Fuel")]
         [SerializeField] private int maxFuel = 500;
         [SerializeField] private int fuelCost = 1;
-        [SerializeField] private float fuelThrustingFactor = 3;
+        [SerializeField] private float mainThrustFuelFactor = 3f;
         
         private CustomRigidbody _landerRb;
         private DefaultInputActions _inputActions;
@@ -58,18 +58,25 @@ namespace ProjectSelene.Code.Gameplay.Lander
             
             if (input.sqrMagnitude > 0f)
             {
-                Vector3 force = new Vector3(input.x, 0f, input.y) * stabilisationPower;
+                Vector3 force = new Vector3(input.x, 0f, input.y) * sideThrust;
                 _landerRb.AddForce(force);
                 _tank.CurrentValue -= fuelCost;
-                //Debug.Log(_tank.CurrentValue);
             }
 
             if (_isThrusting)
             {
-                _landerRb.AddForce(transform.up * thrustPower);
-                _tank.CurrentValue -= (int)math.floor((float)fuelCost * fuelThrustingFactor);
-                //Debug.Log(_tank.CurrentValue);
+                _landerRb.AddForce(transform.up * mainThrust);
+                _tank.CurrentValue -= (int)math.floor((float)fuelCost * mainThrustFuelFactor);
             }
+        }
+
+        public void ApplyConfig(GameConfig gameConfig)
+        {
+            sideThrust = gameConfig.sideThrust;
+            mainThrust = gameConfig.mainThrust;
+            maxFuel = gameConfig.maxFuel;
+            fuelCost = gameConfig.fuelCost;
+            mainThrustFuelFactor = gameConfig.mainThrustFuelFactor;
         }
     }
 }

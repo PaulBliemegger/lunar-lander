@@ -7,7 +7,7 @@ namespace ProjectSelene.Code
         public float LinearDamping;
         public int MaxTank;
         public int FuelCost;
-        public float BaseThrust;
+        public float MainThrustFuelFactor;
         public float MainThrust;
         public float SideThrust;
         public float SafeLandingSpeed;

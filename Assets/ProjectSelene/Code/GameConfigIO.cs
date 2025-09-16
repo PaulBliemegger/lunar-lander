@@ -6,9 +6,9 @@ namespace ProjectSelene.Code
             GravitationalPull = cfg.gravitationalPull,
             Mass = cfg.mass,
             LinearDamping = cfg.linearDamping,
-            MaxTank = cfg.maxTank,
+            MaxTank = cfg.maxFuel,
             FuelCost = cfg.fuelCost,
-            BaseThrust = cfg.baseThrust,
+            MainThrustFuelFactor = cfg.mainThrustFuelFactor,
             MainThrust = cfg.mainThrust,
             SideThrust = cfg.sideThrust,
             SafeLandingSpeed = cfg.safeLandingSpeed,
@@ -19,9 +19,9 @@ namespace ProjectSelene.Code
             target.gravitationalPull = data.GravitationalPull;
             target.mass = data.Mass;
             target.linearDamping = data.LinearDamping;
-            target.maxTank = data.MaxTank;
+            target.maxFuel = data.MaxTank;
             target.fuelCost = data.FuelCost;
-            target.baseThrust = data.BaseThrust;
+            target.mainThrustFuelFactor = data.MainThrustFuelFactor;
             target.mainThrust = data.MainThrust;
             target.sideThrust = data.SideThrust;
             target.safeLandingSpeed = data.SafeLandingSpeed;

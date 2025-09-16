@@ -7,23 +7,23 @@ namespace ProjectSelene.Code
     {
         [SerializeField] private bool loadConfigFromFile;
         
-        [Header("World")]
-        public float gravitationalPull = 100.62f;
+        [Header("Gravity")]
+        public float gravitationalPull = 1.62f;
 
-        [Header("Lander")]
+        [Header("Lander RB")]
         public float mass = 1f;
         public float linearDamping = 0.00f;
 
-        [Header("Fuel")]
-        public int maxTank = 1000;
+        [Header("Lander Fuel")]
+        public int maxFuel = 1000;
         public int fuelCost = 1;
+        public float mainThrustFuelFactor = 3f;
 
-        [Header("Thrusters")]
-        public float baseThrust = 40f;
-        public float mainThrust = 12f;
-        public float sideThrust = 1f;
+        [Header("Lander Thrusters")]
+        public float mainThrust = 40f;
+        public float sideThrust = 5f;
 
-        [Header("Landing")]
+        [Header("Success - Landing")]
         public float safeLandingSpeed = 5f;
 
         private void Awake()

@@ -636,6 +636,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd95da8472f41cf9f3e4d2beeba47f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5757112838003652489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4996479511347317220, guid: 8fd562c96ca50974b9dee8e0763667e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5757112838003652483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051902892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8e916f7f4949bc87ba91111197d993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6359302068210921646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,6 +834,16 @@ PrefabInstance:
       propertyPath: 'consumers.Array.data[0]'
       value: 
       objectReference: {fileID: 5757112838003652485}
+    - target: {fileID: 9180062888805070641, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+        type: 3}
+      propertyPath: 'consumers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5757112838003652486}
+    - target: {fileID: 9180062888805070641, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+        type: 3}
+      propertyPath: 'consumers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5757112838003652489}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

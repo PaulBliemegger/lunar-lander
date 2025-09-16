@@ -20,10 +20,6 @@ namespace ProjectSelene.Code.UI
         private void Start()
         {
             ShowGameUI();
-        }
-
-        private void Awake()
-        {
             _inputActions = new DefaultInputActions();
             _inputActions.Player.Pause.performed += context =>
             {
