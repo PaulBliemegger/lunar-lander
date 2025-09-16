@@ -17,6 +17,8 @@ namespace ProjectSelene.Code.UI
         private bool _isGameUi;
         private DefaultInputActions _inputActions;
 
+        private float _currentTimer;
+
         private void Start()
         {
             ShowGameUI();
@@ -87,8 +89,12 @@ namespace ProjectSelene.Code.UI
         {
             uiDocument.visualTreeAsset = gameOverUi;
             var root = uiDocument.rootVisualElement;
+            
+            
             var timerLabel  = root.Q<Label>("timer__label");
             timerLabel.text = $"{DisplayTime()}";
+            
+            _currentTimer = 0;
             
             uiUpdateStats.ConnectUI(false);
             uiUpdateStats.UpdateStatsOnCollision();
@@ -97,11 +103,16 @@ namespace ProjectSelene.Code.UI
         private string DisplayTime()
         {
             var totalSeconds = Time.realtimeSinceStartup;
-            int minutes = (int)((totalSeconds % 3600) / 60);
-            int seconds = (int)(totalSeconds % 60);
-            int milliseconds = (int)((totalSeconds % 1f) * 1000);
+            int minutes = (int)((_currentTimer % 3600) / 60);
+            int seconds = (int)(_currentTimer % 60);
+            int milliseconds = (int)((_currentTimer % 1f) * 1000);
 
             return string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+        }
+
+        private void Update()
+        {
+            _currentTimer += Time.deltaTime;
         }
     }
 }
