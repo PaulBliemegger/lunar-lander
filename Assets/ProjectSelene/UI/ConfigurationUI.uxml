@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/ProjectSelene/UI/UIiStyle.uss?fileID=7433441132597879392&amp;guid=406c944aa782ac140821145e82ed5d5f&amp;type=3#UIiStyle" />
     <ui:VisualElement style="flex-grow: 1; justify-content: center; align-self: center; flex-direction: row;">
-        <ui:GroupBox style="width: 300px; align-self: center;">
+        <ui:GroupBox style="width: 300px; align-self: center; background-color: rgba(255, 255, 255, 0.31);">
             <ui:FloatField label="Gravitational Pull" value="42.2" name="gravitational-pull__field" class="numeric-field" />
             <ui:FloatField label="Mass" value="42.2" name="mass__field" class="numeric-field" />
             <ui:IntegerField label="Max Tank" value="42" name="max-tank__field" class="numeric-field" />
@@ -10,14 +10,20 @@
             <ui:FloatField label="Side Thrust" value="42.2" name="side-thrust__field" class="numeric-field" />
             <ui:FloatField label="Main Thrust Fuel Factor" value="42.2" name="main-thrust-fuel__field" class="numeric-field" />
             <ui:FloatField label="Safe Landing Speed" value="42.2" name="safe-landing__field" class="numeric-field" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+                <ui:Button text="Reset" name="reset__button" class="menu-button" style="width: 100px; height: 30px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Button text="Save" name="save__button" class="menu-button" style="width: 100px; height: 30px;" />
+            </ui:VisualElement>
         </ui:GroupBox>
         <ui:GroupBox>
-            <ui:Button text="Button" class="menu-button" />
-            <ui:Button text="Button" class="menu-button" />
-            <ui:Button text="Button" class="menu-button" />
+            <ui:RadioButtonGroup label="Pick config to edit" style="flex-direction: column; -unity-font-definition: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Skin_Assets/font/zekton%20free.ttf?fileID=12800000&amp;guid=8297a2bf97dbbba468bd2518d003a876&amp;type=3#zekton free&quot;); color: rgb(255, 255, 255);">
+                <ui:RadioButton label="Easy Map Config" value="true" text="easy" name="easy__radio" />
+                <ui:RadioButton label="Normal Map Config" name="normal__radio" text="normal" />
+                <ui:RadioButton label="Advanced Map Config" name="advanced__radio" text="advanced" />
+            </ui:RadioButtonGroup>
         </ui:GroupBox>
     </ui:VisualElement>
     <ui:VisualElement style="flex-grow: 0; align-self: center;">
-        <ui:Button text="Return" name="return-main-menu__button" class="menu-button" />
+        <ui:Button text="Return" name="return-main-menu__button" class="menu-button" style="width: 140px; height: 80px;" />
     </ui:VisualElement>
 </ui:UXML>

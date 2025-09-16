@@ -5,7 +5,7 @@
   "LinearDamping": 0,
   "MaxTank": 1000,
   "FuelCost": 1,
-  "MainThrustFuelFacto": 3,
+  "MainThrustFuelFactor": 3,
   "MainThrust": 40,
   "SideThrust": 5,
   "SafeLandingSpeed": 5

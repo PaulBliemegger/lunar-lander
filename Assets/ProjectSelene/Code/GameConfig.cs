@@ -31,9 +31,25 @@ namespace ProjectSelene.Code
         {
             if (loadConfigFromFile)
             {
-                GameConfigLoader.TryLoadEffective(configFileName, out GameConfigData data);
-                GameConfigIO.Apply(data, this);
+                LoadConfig(configFileName);
             }
+        }
+
+        public void SaveNewConfig(string key)
+        {
+            ConfigFile.SaveOverride(key, GameConfigIO.FromAsset(this));
+        }
+
+        public void LoadConfig(string key)
+        {
+            GameConfigLoader.TryLoadEffective(key, out GameConfigData data);
+            GameConfigIO.Apply(data, this);
+        }
+
+        public void ResetConfig(string key)
+        {
+            ConfigFile.DeleteOverride(key);
+            LoadConfig(key);
         }
     }
 }

@@ -13,6 +13,18 @@ namespace ProjectSelene.Code.UI
         [SerializeField] private VisualTreeAsset configurationMenu;
         [SerializeField] private ConfigBootstrapper configBootstrapper;
         
+        
+        private FloatField _gravitationalPullField;
+        private FloatField _massField;
+        private FloatField _linearDampingField;
+        private IntegerField _maxFuelField;
+        private IntegerField _fuelCostField;
+        private FloatField _mainThrustFuelFactorField;
+        private FloatField _mainThrustField;
+        private FloatField _sideThrustField;
+        private FloatField _safeLandingSpeedField;
+        
+        
         private float _gravitationalPull;
         private float _mass;
         private float _linearDamping;
@@ -23,9 +35,12 @@ namespace ProjectSelene.Code.UI
         private float _sideThrust;
         private float _safeLandingSpeed;
 
+        private string _activeConfig;
+
         private void Start()
         {
             ShowMainMenu();
+            _activeConfig = "easy";
         }
         
         private void ShowMainMenu()
@@ -74,48 +89,100 @@ namespace ProjectSelene.Code.UI
 
         private void ShowConfiguration()
         {
-            LoadConfig();
+            LoadConfig(_activeConfig);
             uiDocument.visualTreeAsset = configurationMenu;
             var root = uiDocument.rootVisualElement;
             var returnButton = root.Q<Button>("return-main-menu__button");
             returnButton.clicked += ShowMainMenu;
             
-            var gravitationalPull = root.Q<FloatField>("gravitational-pull__field");
-            gravitationalPull.value = _gravitationalPull;
-            gravitationalPull.RegisterValueChangedCallback((evt) => _gravitationalPull = evt.newValue);
+            var resetButton = root.Q<Button>("reset__button");
+            resetButton.clicked += ResetConfig;
             
-            var mass = root.Q<FloatField>("mass__field");
-            mass.value = _mass;
-            mass.RegisterValueChangedCallback((evt) => _mass = evt.newValue);
+            var saveButton = root.Q<Button>("save__button");
+            saveButton.clicked += SaveNewConfig;
             
-            var maxFuel = root.Q<IntegerField>("max-tank__field");
-            maxFuel.value = _maxFuel;
-            maxFuel.RegisterValueChangedCallback((evt) => _maxFuel = evt.newValue);
+            var easyRadioButton = root.Q<RadioButton>("easy__radio");
+            easyRadioButton.RegisterValueChangedCallback((evt) =>
+            {
+                if (evt.newValue)
+                {
+                    LoadConfig(easyRadioButton.text);
+                    UpdateFields();
+                }
+                
+            });
             
-            var fuelCost = root.Q<IntegerField>("fuel-cost__field");
-            fuelCost.value = _fuelCost;
-            fuelCost.RegisterValueChangedCallback((evt) => _fuelCost = evt.newValue);
+            var normalRadioButton = root.Q<RadioButton>("normal__radio");
+            normalRadioButton.RegisterValueChangedCallback((evt) =>
+            {
+                
+                if (evt.newValue)
+                {
+                    LoadConfig(normalRadioButton.text);
+                    UpdateFields();
+                }
+            });
             
-            var mainThrustFuelFactor = root.Q<FloatField>("main-thrust-fuel__field");
-            mainThrustFuelFactor.value = _mainThrustFuelFactor;
-            mainThrustFuelFactor.RegisterValueChangedCallback((evt) => _mainThrustFuelFactor = evt.newValue);
+            var advancedRadioButton = root.Q<RadioButton>("advanced__radio");
+            advancedRadioButton.RegisterValueChangedCallback((evt) =>
+            {
+                if (evt.newValue)
+                {
+                    LoadConfig(advancedRadioButton.text);
+                    UpdateFields();
+                }
+            });
             
-            var mainThrust = root.Q<FloatField>("main-thrust__field");
-            mainThrust.value = _mainThrust;
-            mainThrust.RegisterValueChangedCallback((evt) => _mainThrust = evt.newValue);
+            _gravitationalPullField = root.Q<FloatField>("gravitational-pull__field");
+            _gravitationalPullField.value = _gravitationalPull;
+            _gravitationalPullField.RegisterValueChangedCallback((evt) => _gravitationalPull = evt.newValue);
             
-            var sideThrust = root.Q<FloatField>("side-thrust__field");
-            sideThrust.value = _sideThrust;
-            sideThrust.RegisterValueChangedCallback((evt) => _sideThrust = evt.newValue);
+            _massField = root.Q<FloatField>("mass__field");
+            _massField.value = _mass;
+            _massField.RegisterValueChangedCallback((evt) => _mass = evt.newValue);
             
-            var safeLandingSpeed = root.Q<FloatField>("safe-landing__field");
-            safeLandingSpeed.value = _safeLandingSpeed;
-            safeLandingSpeed.RegisterValueChangedCallback((evt) => _safeLandingSpeed = evt.newValue);
+            _maxFuelField = root.Q<IntegerField>("max-tank__field");
+            _maxFuelField.value = _maxFuel;
+            _maxFuelField.RegisterValueChangedCallback((evt) => _maxFuel = evt.newValue);
+            
+            _fuelCostField = root.Q<IntegerField>("fuel-cost__field");
+            _fuelCostField.value = _fuelCost;
+            _fuelCostField.RegisterValueChangedCallback((evt) => _fuelCost = evt.newValue);
+            
+            _mainThrustFuelFactorField = root.Q<FloatField>("main-thrust-fuel__field");
+            _mainThrustFuelFactorField.value = _mainThrustFuelFactor;
+            _mainThrustFuelFactorField.RegisterValueChangedCallback((evt) => _mainThrustFuelFactor = evt.newValue);
+            
+            _mainThrustField = root.Q<FloatField>("main-thrust__field");
+            _mainThrustField.value = _mainThrust;
+            _mainThrustField.RegisterValueChangedCallback((evt) => _mainThrust = evt.newValue);
+            
+            _sideThrustField = root.Q<FloatField>("side-thrust__field");
+            _sideThrustField.value = _sideThrust;
+            _sideThrustField.RegisterValueChangedCallback((evt) => _sideThrust = evt.newValue);
+            
+            _safeLandingSpeedField = root.Q<FloatField>("safe-landing__field");
+            _safeLandingSpeedField.value = _safeLandingSpeed;
+            _safeLandingSpeedField.RegisterValueChangedCallback((evt) => _safeLandingSpeed = evt.newValue);
         }
 
-        private void LoadConfig()
+        private void UpdateFields()
+        {
+            _gravitationalPullField.value = _gravitationalPull;
+            _massField.value = _mass;
+            _maxFuelField.value = _maxFuel;
+            _fuelCostField.value = _fuelCost;
+            _mainThrustFuelFactorField.value = _mainThrustFuelFactor;
+            _mainThrustField.value = _mainThrust;
+            _sideThrustField.value = _sideThrust;
+            _safeLandingSpeedField.value = _safeLandingSpeed;
+            
+        }
+
+        private void LoadConfig(string key)
         {
             var config = configBootstrapper.Config;
+            config.LoadConfig(key);
             _gravitationalPull = config.gravitationalPull;
             _mass = config.mass;
             _maxFuel = config.maxFuel;
@@ -124,6 +191,7 @@ namespace ProjectSelene.Code.UI
             _mainThrust = config.mainThrust;
             _sideThrust = config.sideThrust;
             _safeLandingSpeed = config.safeLandingSpeed;
+            _activeConfig = key;
         }
 
         private void SaveNewConfig()
@@ -137,8 +205,15 @@ namespace ProjectSelene.Code.UI
             config.mainThrust = _mainThrust;
             config.sideThrust = _sideThrust;
             config.safeLandingSpeed = _safeLandingSpeed;
+            
+            config.SaveNewConfig(_activeConfig);
         }
-        
-        
+
+        private void ResetConfig()
+        {
+            var config = configBootstrapper.Config;
+            config.ResetConfig(_activeConfig);
+            LoadConfig(_activeConfig);
+        }
     }
 }
