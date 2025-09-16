@@ -612,6 +612,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e200074670449cb742a7554b3868ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5757112838003652485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2564276466358145106, guid: 8fd562c96ca50974b9dee8e0763667e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5757112838003652483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051902892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a225bc6e484684bc1a1941920a6103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5757112838003652486 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2693204427367301782, guid: 8fd562c96ca50974b9dee8e0763667e4,
@@ -805,6 +817,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9180062888805070641, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+        type: 3}
+      propertyPath: 'consumers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5757112838003652485}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

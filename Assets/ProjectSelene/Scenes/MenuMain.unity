@@ -258,7 +258,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7280396597873651265}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1043413436}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d2a2abcb884dbb80ebf9e3bea379b1, type: 3}
@@ -468,6 +468,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043413436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1468431214613409842, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+    type: 3}
+  m_PrefabInstance: {fileID: 7280396597873651265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1043413439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043413436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d965eb79264246aa56b543baaa55f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadConfigFromFile: 0
+  gravity: -100.62
+  mass: 1
+  linearDamping: 0
+  maxTank: 1000
+  fuelCost: 1
+  baseThrust: 40
+  mainThrust: 12
+  sideThrust: 1
+  safeLandingSpeed: 5
+--- !u!114 &1043413440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043413436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144c04df1a2d40e29ab1efd161d38ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 1043413439}
+  consumers:
+  - {fileID: 1051902900}
 --- !u!1 &1051902892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4889881378195546670, guid: 8fd562c96ca50974b9dee8e0763667e4,
@@ -480,6 +523,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5757112838003652483}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1051902900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2564276466358145106, guid: 8fd562c96ca50974b9dee8e0763667e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5757112838003652483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051902892}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a225bc6e484684bc1a1941920a6103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282059677
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +969,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1468431214613409842, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1043413440}
+    - targetCorrespondingSourceObject: {fileID: 1468431214613409842, guid: 4aeb6521fa9d39c43bdf9935a1278829,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1043413439}
   m_SourcePrefab: {fileID: 100100000, guid: 4aeb6521fa9d39c43bdf9935a1278829, type: 3}
 --- !u!1001 &8382147662947584477
 PrefabInstance:

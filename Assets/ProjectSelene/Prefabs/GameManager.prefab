@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8130353803798721352}
   - component: {fileID: 6200227703731468780}
   - component: {fileID: 6484084839867826634}
+  - component: {fileID: 2625939313884230094}
+  - component: {fileID: 9180062888805070641}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,6 +51,7 @@ MonoBehaviour:
   lander: {fileID: 0}
   cam: {fileID: 0}
   secondCam: {fileID: 0}
+  ui: {fileID: 0}
 --- !u!114 &6484084839867826634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,3 +68,40 @@ MonoBehaviour:
   lander: {fileID: 0}
   platform: {fileID: 0}
   activationDistance: 30
+--- !u!114 &2625939313884230094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468431214613409842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d965eb79264246aa56b543baaa55f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadConfigFromFile: 0
+  gravitationalPull: 1.62
+  mass: 1
+  linearDamping: 0
+  maxTank: 1000
+  fuelCost: 1
+  baseThrust: 40
+  mainThrust: 12
+  sideThrust: 1
+  safeLandingSpeed: 5
+--- !u!114 &9180062888805070641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468431214613409842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144c04df1a2d40e29ab1efd161d38ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 2625939313884230094}
+  consumers:
+  - {fileID: 0}
